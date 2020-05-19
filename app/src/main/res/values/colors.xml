@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fb4444</color>
+    <color name="colorPrimaryDark">#eb4646</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="red_sceme_1">#8f111d</color>
+    <color name="red_sceme_2">#a91622</color>
+    <color name="red_sceme_3">#bd1628</color>
+    <color name="red_sceme_4">#d31122</color>
+    <color name="red_sceme_5">#f1202b</color>
+    <color name="red_sceme_6">#f63c41</color>
+
+
+</resources>

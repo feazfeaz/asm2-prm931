@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    /// layout designed for reusable or listView
+
+    <LinearLayout
+        android:id="@+id/detail_par_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/lagre_box_space"
+        android:orientation="horizontal">
+        <ImageView
+            style="@style/detail_ic"
+            android:id="@+id/detail_ic"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_hotel"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/detail_txt"
+            android:layout_marginLeft="@dimen/litle_space"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/litle_space"
+            android:text="@string/app_name"/>
+    </LinearLayout>
+
+</LinearLayout>

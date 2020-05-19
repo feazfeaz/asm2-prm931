@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="litle_space">5dp</dimen>
+    <dimen name="space">10dp</dimen>
+    <dimen name="large_space">15dp</dimen>
+
+    <dimen name="box_space">35dp</dimen>
+    <dimen name="lagre_box_space">50dp</dimen>
+
+    <dimen name="small_size_txt">10sp</dimen>
+    <dimen name="medium_size_txt">18sp</dimen>
+    <dimen name="large_size_txt">25sp</dimen>
+
+
+</resources>
