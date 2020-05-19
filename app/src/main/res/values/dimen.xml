@@ -3,9 +3,13 @@
     <dimen name="litle_space">5dp</dimen>
     <dimen name="space">10dp</dimen>
     <dimen name="large_space">15dp</dimen>
+    <dimen name="gaint_space">25dp</dimen>
 
     <dimen name="box_space">35dp</dimen>
     <dimen name="lagre_box_space">50dp</dimen>
+
+    <dimen name="small_area">145dp</dimen>
+    <dimen name="medium_area">180dp</dimen>
 
     <dimen name="small_size_txt">10sp</dimen>
     <dimen name="medium_size_txt">18sp</dimen>

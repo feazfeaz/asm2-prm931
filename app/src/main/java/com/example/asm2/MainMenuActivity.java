@@ -5,15 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -21,26 +14,27 @@ public class MainMenuActivity extends AppCompatActivity {
     private static final String TAG = MainMenuActivity.class.getSimpleName();
     public static final String NAME_SERVICE_KEY = "name_service";
 
-    private FragmentManager mfragmentManager;// control main fragment contain
+    private FragmentManager mainFragmentManager;// control main fragment contain
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        // dư án được build lại vài lần nên có nhiều chổ dư thừa
+        // dư án được build lại vài lần nên có nhiều chổ thừa ạ :P
 
-        mfragmentManager = getSupportFragmentManager();
-        FragmentTransaction mFragmentTransaction = mfragmentManager.beginTransaction();
-        mFragmentTransaction.replace(R.id.main_fragment,new Main_menu(),Main_menu.class.getSimpleName()).commit();
+        mainFragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = mainFragmentManager.beginTransaction();
+        // load main screne
+        fragmentTransaction.replace(R.id.main_fragment,new MainMenuFragment(),MainMenuFragment.class.getSimpleName()).commit();
     }
-
+    // method load detail content of service for button
     public void getFragment(View view){
-        Fragment mfragment = null;
+        Fragment fragment = null;
         switch (view.getId()){
             case R.id.btn_hotel:{
                 // get fragment service
-                mfragment = new ListContentServiceFragment(
+                fragment = new ListContentServiceFragment(
                         //provide adapter for list fragment
                         creatAdapter(
                                 R.array.lst_hotel,
@@ -48,55 +42,55 @@ public class MainMenuActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 // and name of sevice too
                 bundle.putString(NAME_SERVICE_KEY,getString(R.string.service_hotel));
-                mfragment.setArguments(bundle);
+                fragment.setArguments(bundle);
                 break;
             }
             case R.id.btn_bus:{
-                mfragment = new ListContentServiceFragment(
+                // too
+                fragment = new ListContentServiceFragment(
                         creatAdapter(
                                 R.array.lst_bus,
                                 R.drawable.ic_bus));
                 Bundle bundle = new Bundle();
                 bundle.putString(NAME_SERVICE_KEY,getString(R.string.service_bus));
-                mfragment.setArguments(bundle);
+                fragment.setArguments(bundle);
                 break;
             }
             case R.id.btn_atm:{
-                mfragment = new ListContentServiceFragment(
+                fragment = new ListContentServiceFragment(
                         creatAdapter(
                                 R.array.lst_atm,
                                 R.drawable.ic_atm));
                 Bundle bundle = new Bundle();
                 bundle.putString(NAME_SERVICE_KEY,getString(R.string.service_atm));
-                mfragment.setArguments(bundle);
+                fragment.setArguments(bundle);
                 break;
             }
             case R.id.btn_hospital:{
-                mfragment = new ListContentServiceFragment(
+                fragment = new ListContentServiceFragment(
                         creatAdapter(
                                 R.array.lst_hospital,
                                 R.drawable.ic_hostpital));
                 Bundle bundle = new Bundle();
                 bundle.putString(NAME_SERVICE_KEY,getString(R.string.service_hospital));
-                mfragment.setArguments(bundle);
+                fragment.setArguments(bundle);
                 break;
             }
         }
-        FragmentTransaction mFragmentTransaction = mfragmentManager.beginTransaction();
+        FragmentTransaction mFragmentTransaction = mainFragmentManager.beginTransaction();
         // set fragment and replace
         mFragmentTransaction.replace(R.id.main_fragment,
                 //content
-                mfragment,
+                fragment,
                 //tag
                 ListContentServiceFragment.class.getSimpleName())
                 // add back stack to return home
-                .addToBackStack(mfragment.getClass().getName())
+                .addToBackStack(fragment.getClass().getName())
                 .commit();
-
     }
 
-    public mAdapter creatAdapter(int listContet, int icon){
-        return new mAdapter(
+    public ContentServiceApdater creatAdapter(int listContet, int icon){
+        return new ContentServiceApdater(
                 this,
                 // list content for adapter
                 getResources().getStringArray(listContet),
@@ -107,8 +101,8 @@ public class MainMenuActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // check to see stack left
-        if(mfragmentManager.getBackStackEntryCount() > 0){
-            mfragmentManager.popBackStack();
+        if(mainFragmentManager.getBackStackEntryCount() > 0){
+            mainFragmentManager.popBackStack();
         }else {
             super.onBackPressed();
         }
