@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -27,6 +29,7 @@ public class MainMenuActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = mainFragmentManager.beginTransaction();
         // load main screne
         fragmentTransaction.replace(R.id.main_fragment,new MainMenuFragment(),MainMenuFragment.class.getSimpleName()).commit();
+        
     }
     // method load detail content of service for button
     public void getFragment(View view){

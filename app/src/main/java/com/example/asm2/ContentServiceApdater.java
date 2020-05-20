@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.zip.Inflater;
+
 public class ContentServiceApdater extends BaseAdapter {
 
     private static final String TAG = ContentServiceApdater.class.getSimpleName() ;

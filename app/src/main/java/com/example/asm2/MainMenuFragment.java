@@ -59,7 +59,7 @@ public class MainMenuFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        //haaaaaaaaaaaa
         Log.e(TAG, "onCreateView: ");
 
         View view = inflater.inflate(R.layout.fragment_main_menu, container, false);

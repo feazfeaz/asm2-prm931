@@ -3,9 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     /// layout designed for reusable or listView
-
     <LinearLayout
         android:id="@+id/detail_par_linear"
         android:layout_width="match_parent"
